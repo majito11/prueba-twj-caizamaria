@@ -4,7 +4,7 @@
     <h4>Los poderes con <%= idHeroe %> son:</h4>
   </div>
   <div class="col-sm-3">
-    <a href="/CrearJugador?idEquipo=<%= idHeroe %>" class="btn btn-lg btn-block btn-success">Crear Heroe</a>
+    <a href="/Heroe/crearHeroe=<%= idHeroe %>" class="btn btn-lg btn-block btn-success">Crear Heroe</a>
   </div>
 </div>
 <br>
@@ -27,7 +27,7 @@
   </div>
   <div class="col-sm-1"></div>
   <div class="col-sm-2" style="margin-top:10px">
-    <a href="/Jugador/borrarJugador?id=<%= poderes[i].id %>&idHeroe=<%= idHeroe %>"
+    <a href="Poder/listarPoder?id=<%= poderes[i].id %>&idHeroe=<%= idHeroe %>"
        class="btn btn-block btn-danger">X</a>
     <a href="/Poder/actualizarPoder?id=<%= poderes[i].id %>&idPoder=<%= idHeroe %>"
        class="btn btn-block btn-info">Editar</a>
