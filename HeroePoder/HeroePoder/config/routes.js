@@ -31,10 +31,16 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
-
-  '/': {
-    view: 'homepage'
-  }
+    
+  'get /': 'RutasController.home',
+  'get /home': 'RutasController.home',
+  'get /error': 'RutasController.error',
+  'get /crearHeroe': 'RutasController.crearHeroe',
+  'get /crearPoder': 'RutasController.crearPoder',
+  'get /listarHeroe': 'HeroeController.listarHeroe',
+  'get /actualizarHeroe' : 'HeroeController.actualizarHeroe',
+  'get /listarPoderes': 'PoderController.listarPoderes',
+  'get /actualizarPoder' : 'PoderController.actualizarPoder'
 
   /***************************************************************************
   *                                                                          *
