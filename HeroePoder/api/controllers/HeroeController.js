@@ -16,7 +16,7 @@ module.exports = {
     };
     Heroe.create(HeroeCrear).exec(function (err, HeroeCreado) {
       if (err) {
-        return res.view('vistas/error', {
+        return res.view('Vistas/error', {
           error: {
             descripcion: "Error al crear el Heroe",
             rawError: err,
