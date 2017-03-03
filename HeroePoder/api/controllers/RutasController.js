@@ -7,10 +7,10 @@
 
 module.exports = {
   home: function (req,res) {
-    return res.view('vistas/home');
+    return res.view('Vistas/home');
   },
   error: function (req, res) {
-    return res.view('vistas/error', {
+    return res.view('Vistas/error', {
       error: {
         desripcion: "Usted esta por error en esta Ruta dirijase a Inicio",
         rawError: "Ruta equivocada",
@@ -19,10 +19,10 @@ module.exports = {
     });
   },
   crearHeroe: function (req, res) {
-    return res.view('vistas/Heroe/crearHeroe');
+    return res.view('Vistas/Heroe/crearHeroe');
   },
   crearPoder: function (req, res) {
-    return res.view('vistas/Poder/crearPoder',{
+    return res.view('Vistas/Poder/crearPoder',{
       idHeroe:req.allParams().idHeroe
     });
   }

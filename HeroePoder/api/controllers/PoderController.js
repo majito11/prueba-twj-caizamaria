@@ -16,7 +16,7 @@ module.exports = {
     };
     Poder.create(PoderCrear).exec(function (err, PoderCreado) {
       if (err) {
-        return res.view('vistas/error', {
+        return res.view('Vistas/error', {
           error: {
             descripcion: "Error al crear el Poder",
             rawError: err,
@@ -26,7 +26,7 @@ module.exports = {
       }
       Poder.find().exec(function (errEncontrado, PoderesEncontrados) {
         if (errEncontrado) {
-          return res.view('vistas/error', {
+          return res.view('Vistas/error', {
             error: {
               descripcion: "Se presento un problema al cargar los Poderes",
               rawError: errEncontrado,
@@ -34,7 +34,7 @@ module.exports = {
             }
           });
         }
-        res.view('vistas/Poder/listarPoderes', {Poderes: NivelEncontrados});
+        res.view('Vistas/Poder/listarPoderes', {Poderes: NivelEncontrados});
       })
     });
 
@@ -42,7 +42,7 @@ module.exports = {
   listarNivel: function (req, res) {
     Poder.find().exec(function (errorEncontrado, NivelEncontrados) {
       if (errorEncontrado) {
-        return res.view('vistas/error', {
+        return res.view('Vistas/error', {
           error: {
             desripcion: "Problema a cargar todos los Nivel registrados",
             rawError: errorEncontrado,
@@ -50,7 +50,7 @@ module.exports = {
           }
         });
       }
-      res.view('vistas/Poder/listarNivel', {Nivel: PoderesEncontrados});
+      res.view('Vistas/Poder/listarNivel', {Nivel: PoderesEncontrados});
 
     });
 
@@ -62,7 +62,7 @@ module.exports = {
         id: parametros.id
       }).exec(function (errorIndefinido, PoderBorrado) {
         if (errorIndefinido) {
-          return res.view('vistas/error', {
+          return res.view('Vistas/error', {
             error: {
               descripcion: "Error al borrar el Poder",
               rawError: errorIndefinido,
@@ -72,7 +72,7 @@ module.exports = {
         }
         Poder.find().exec(function (errorEncontrado, PoderesEncontrados) {
           if (errorEncontrado) {
-            return res.view('vistas/error', {
+            return res.view('Vistas/error', {
               error: {
                 descripcion: "Ocurrio un problema en la carga de los Poderes",
                 rawError: errorEncontrado,
@@ -80,7 +80,7 @@ module.exports = {
               }
             });
           }
-          res.view('vistas/Poder/listarPoderes', {
+          res.view('Vistas/Poder/listarPoderes', {
             Poderes: PoderesEncontrados
           });
         });
@@ -94,7 +94,7 @@ module.exports = {
         id: parametros.id
       }).exec(function (errorInesperado, PoderEncontrado) {
         if (errorInesperado) {
-          return res.view('vistas/error', {
+          return res.view('Vistas/error', {
             error: {
               descripcion: "Se ha producido un error inesperado",
               rawError: errorInesperado,
@@ -103,12 +103,12 @@ module.exports = {
           });
         }
         if (PoderEncontrado) {
-          return res.view('vistas/Poder/actualizarPoder', {
+          return res.view('Vistas/Poder/actualizarPoder', {
             Poder: PoderEncontrado
           });
         }
         else {
-          return res.view('vista/error', {
+          return res.view('Vista/error', {
             error: {
               descripcion: "El Poder con el id: " + parametros.id + " no existe",
               rawError: "No existe el Poder",
@@ -132,7 +132,7 @@ module.exports = {
       id: parametros.idPoder
     }, PoderAActualizar).exec(function (errorInesperado, PoderActualizado) {
       if (errorInesperado) {
-        return res.view('vistas/error', {
+        return res.view('Vistas/error', {
           error: {
             descripcion: "Se ha presentado un problema al actualizar el Poder",
             rawError: errorInesperado,
@@ -142,7 +142,7 @@ module.exports = {
       }
       Poder.find().exec(function (errorEncontrado, PoderesEncontrados) {
         if (errorEncontrado) {
-          return res.view('vistas/error', {
+          return res.view('Vistas/error', {
             error: {
               descripcion: "Se ha encontrado un error inesperado en la carga de los Poderes",
               rawError: errorEncontrado,
@@ -150,7 +150,7 @@ module.exports = {
             }
           });
         }
-        res.view('vistas/Poder/listarPoderes', {
+        res.view('Vistas/Poder/listarPoderes', {
           Poderes: PoderfesEncontrados
         });
       })
