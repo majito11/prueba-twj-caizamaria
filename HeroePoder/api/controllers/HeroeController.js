@@ -30,11 +30,11 @@ module.exports = {
             error: {
               descripcion: "Se presento un problema al cargar los Heroes",
               rawError: errEncontrado,
-              url: "/listarHeroes"
+              url: "/listarHeroe"
             }
           });
         }
-        res.view('Vistas/Heroe/listarHeroes', {Heroes: HeroesEncontrados});
+        res.view('Vistas/Heroe/listarHeroe', {Heroes: HeroesEncontrados});
       })
     });
 
@@ -46,11 +46,11 @@ module.exports = {
           error: {
             desripcion: "Problema a cargar todos los Heroes registrados",
             rawError: errorEncontrado,
-            url: "/listarHeroes"
+            url: "/listarHeroe"
           }
         });
       }
-      res.view('Vistas/Heroe/listarHeroes', {Heroes: HeroesEncontrados});
+      res.view('Vistas/Heroe/listarHeroe', {Heroes: HeroesEncontrados});
 
     });
 
@@ -66,7 +66,7 @@ module.exports = {
             error: {
               descripcion: "Error al borrar el Heroe",
               rawError: errorIndefinido,
-              url: "/listarHeroes"
+              url: "/listarHeroe"
             }
           });
         }
@@ -76,11 +76,11 @@ module.exports = {
               error: {
                 descripcion: "Ocurrio un problema en la carga de los Heroes",
                 rawError: errorEncontrado,
-                url: "/listarHeroes"
+                url: "/listarHeroe"
               }
             });
           }
-          res.view('Vistas/Heroe/listarHeroes', {
+          res.view('Vistas/Heroe/listarHeroe', {
             Heroes: HeroesEncontrados
           });
         });
@@ -98,7 +98,7 @@ module.exports = {
             error: {
               descripcion: "Se ha producido un error inesperado",
               rawError: errorInesperado,
-              url: "/listarHeroes"
+              url: "/listarHeroe"
             }
           });
         }
@@ -112,7 +112,7 @@ module.exports = {
             error: {
               descripcion: "El Heroe con el id: " + parametros.id + " no existe",
               rawError: "No existe el Heroe",
-              url: "/listarHeroes"
+              url: "/listarHeroe"
             }
           });
         }
@@ -136,7 +136,7 @@ module.exports = {
           error: {
             descripcion: "Se ha presentado un problema al actualizar el Heroe",
             rawError: errorInesperado,
-            url: "/listarHeroes"
+            url: "/listarHeroe"
           }
         });
       }
@@ -146,11 +146,11 @@ module.exports = {
             error: {
               descripcion: "Se ha encontrado un error inesperado en la carga de los Heroes",
               rawError: errorEncontrado,
-              url: "/listarHeroes"
+              url: "/listarHeroe"
             }
           });
         }
-        res.view('Vistas/Heroe/listarHeroes', {
+        res.view('Vistas/Heroe/listarHeroe', {
           Heroes: HeroeCrsEncontrados
         });
       })
