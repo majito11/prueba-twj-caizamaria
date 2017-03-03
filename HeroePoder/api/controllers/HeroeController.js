@@ -26,7 +26,7 @@ module.exports = {
       }
       Heroe.find().exec(function (errEncontrado, HeroesEncontrados) {
         if (errEncontrado) {
-          return res.view('vistas/error', {
+          return res.view('Vistas/error', {
             error: {
               descripcion: "Se presento un problema al cargar los Heroes",
               rawError: errEncontrado,
@@ -34,7 +34,7 @@ module.exports = {
             }
           });
         }
-        res.view('vistas/Heroe/listarHeroes', {Heroes: HeroesEncontrados});
+        res.view('Vistas/Heroe/listarHeroes', {Heroes: HeroesEncontrados});
       })
     });
 
@@ -42,7 +42,7 @@ module.exports = {
   listarHeroes: function (req, res) {
     Heroe.find().exec(function (errorEncontrado, HeroesEncontrados) {
       if (errorEncontrado) {
-        return res.view('vistas/error', {
+        return res.view('Vistas/error', {
           error: {
             desripcion: "Problema a cargar todos los Heroes registrados",
             rawError: errorEncontrado,
@@ -50,7 +50,7 @@ module.exports = {
           }
         });
       }
-      res.view('vistas/Heroe/listarHeroes', {Heroes: HeroesEncontrados});
+      res.view('Vistas/Heroe/listarHeroes', {Heroes: HeroesEncontrados});
 
     });
 
@@ -62,7 +62,7 @@ module.exports = {
         id: parametros.id
       }).exec(function (errorIndefinido, HeroeBorrado) {
         if (errorIndefinido) {
-          return res.view('vistas/error', {
+          return res.view('Vistas/error', {
             error: {
               descripcion: "Error al borrar el Heroe",
               rawError: errorIndefinido,
@@ -72,7 +72,7 @@ module.exports = {
         }
         Heroe.find().exec(function (errorEncontrado, HeroesEncontrados) {
           if (errorEncontrado) {
-            return res.view('vistas/error', {
+            return res.view('Vistas/error', {
               error: {
                 descripcion: "Ocurrio un problema en la carga de los Heroes",
                 rawError: errorEncontrado,
@@ -80,7 +80,7 @@ module.exports = {
               }
             });
           }
-          res.view('vistas/Heroe/listarHeroes', {
+          res.view('Vistas/Heroe/listarHeroes', {
             Heroes: HeroesEncontrados
           });
         });
@@ -94,7 +94,7 @@ module.exports = {
         id: parametros.id
       }).exec(function (errorInesperado, HeroeEncontrado) {
         if (errorInesperado) {
-          return res.view('vistas/error', {
+          return res.view('Vistas/error', {
             error: {
               descripcion: "Se ha producido un error inesperado",
               rawError: errorInesperado,
@@ -103,12 +103,12 @@ module.exports = {
           });
         }
         if (HeroeEncontrado) {
-          return res.view('vistas/Heroe/actualizarHeroe', {
+          return res.view('Vistas/Heroe/actualizarHeroe', {
             Heroe: HeroeEncontrado
           });
         }
         else {
-          return res.view('vista/error', {
+          return res.view('Vista/error', {
             error: {
               descripcion: "El Heroe con el id: " + parametros.id + " no existe",
               rawError: "No existe el Heroe",
@@ -132,7 +132,7 @@ module.exports = {
       id: parametros.idHeroe
     }, HeroeAActualizar).exec(function (errorInesperado, HeroeActualizado) {
       if (errorInesperado) {
-        return res.view('vistas/error', {
+        return res.view('Vistas/error', {
           error: {
             descripcion: "Se ha presentado un problema al actualizar el Heroe",
             rawError: errorInesperado,
@@ -142,7 +142,7 @@ module.exports = {
       }
       Heroe.find().exec(function (errorEncontrado, HeroesEncontrados) {
         if (errorEncontrado) {
-          return res.view('vistas/error', {
+          return res.view('Vistas/error', {
             error: {
               descripcion: "Se ha encontrado un error inesperado en la carga de los Heroes",
               rawError: errorEncontrado,
@@ -150,7 +150,7 @@ module.exports = {
             }
           });
         }
-        res.view('vistas/Heroe/listarHeroes', {
+        res.view('Vistas/Heroe/listarHeroes', {
           Heroes: HeroeCrsEncontrados
         });
       })
